@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>翻译插件设置</title>
+  <style>
+    body { width: 300px; padding: 10px; }
+    label, input, select { display: block; margin-top: 10px; }
+    input[type="text"] { width: 100%; }
+    button { margin-top: 10px; }
+    #proxyUrlContainer { display: flex; align-items: center; }
+    #proxyUrl { flex-grow: 1; margin-right: 10px; }
+    #verifyProxy { white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <h2>翻译服务设置</h2>
+  <select id="translationService">
+    <option value="free">免费翻译服务</option>
+    <option value="chatgpt">ChatGPT 翻译</option>
+  </select>
+  <div id="chatgptSettings" style="display: none;">
+    <label for="apiKey">OpenAI API 密钥：</label>
+    <input type="text" id="apiKey">
+    <label for="proxyUrl">代理接口 URL（可选）：</label>
+    <div id="proxyUrlContainer">
+      <input type="text" id="proxyUrl">
+      <button id="verifyProxy">验证</button>
+    </div>
+    <div id="proxyStatus"></div>
+    <label for="chatgptModel">ChatGPT 模型：</label>
+    <select id="chatgptModel">
+      <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+      <option value="embedding">embedding</option>
+      <option value="gpt-4o-mini">gpt-4o-mini</option>
+      <option value="gpt-4">gpt-4</option>
+    </select>
+  </div>
+  <button id="saveSettings">保存设置</button>
+  <div id="message"></div>
+  <script src="settings.js"></script>
+</body>
+</html>
